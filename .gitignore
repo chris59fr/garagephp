@@ -1,0 +1,63 @@
+# Fichiers de configuration sensibles et spécifiques à l'environnement
+.env
+.env.*local
+.env.production.local
+.env.staging.local
+.env.development.local
+
+# Dépendances du gestionnaire de paquets PHP (Composer)
+/vendor/
+/composer.lock # Souvent inclus pour des builds reproductibles, mais ignoré si vous régénérez souvent
+
+# Logs de l'application
+/storage/*.log
+/storage/logs/
+/storage/cache/
+/storage/framework/
+/storage/app/
+
+# Fichiers de cache et temporaires générés par l'application
+/cache/
+/tmp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Fichiers de session PHP
+/sessions/
+
+# Fichiers d'IDE et d'éditeurs de texte
+.idea/             # JetBrains (PhpStorm, IntelliJ, etc.)
+.vscode/           # VS Code (extensions, paramètres de workspace)
+*.sublime-project
+*.sublime-workspace
+.DS_Store          # macOS
+Thumbs.db          # Windows
+ehthumbs.db
+.sass-cache/       # Cache Sass/SCSS
+*.log              # Fichiers de log génériques
+*.sqlite           # Fichiers de base de données SQLite (si utilisé)
+
+# Fichiers de build ou de distribution
+/build/
+/dist/
+
+# Fichiers Docker ignorés (si non essentiels au build ou à la CI)
+.dockerignore # Si vous avez un .dockerignore spécifique pour le build Docker
+
+# Fichiers de base de données générés localement (si pas dans sql/)
+*.sqlite3
+*.db
+*.mdb
+
+# Fichiers de test (rapports, couvertures)
+/coverage/
+.phpunit.result.cache
+
+# Fichiers de nœuds (si vous utilisez Node.js pour le frontend)
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

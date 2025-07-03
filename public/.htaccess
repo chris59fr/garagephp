@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    <!--Redirection des URLs propres-->
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+<!--Sécurité: Contrôle d'accès aux fichiers PHP
+    Par défaut, Apache autorise l'accès aux fichiers-->
+<Files "*.php">
+    Require all granted <!--Apache 2.4+ equivalent de Order allow,deny Allow from all-->
+</Files>
+
+<!--Cache statique via Expires Headers
+    Améliore les performances en indiquant aux navigateurs de cacher les ressources statiques.-->
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month" # Règle par défaut pour les autres types de fichiers
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year" # Ajout de GIF
+    ExpiresByType image/webp "access plus 1 year" # Ajout de WebP
+    ExpiresByType application/font-woff "access plus 1 year" # Ajout de polices
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType font/opentype "access plus 1 year"
+</IfModule>
