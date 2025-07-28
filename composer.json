@@ -1,7 +1,7 @@
 {
     "name": "mon-projet/garage-php",
     "description": "projet de formation",
-    "type": "projet",
+    "type": "project",
     "require": {
         "php": ">=8.1",
         "nikic/fast-route":"^1.3",
