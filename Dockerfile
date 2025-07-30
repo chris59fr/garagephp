@@ -5,7 +5,7 @@ FROM php:8.3-apache
 RUN apt-get update && apt-get install -y && apt-get install -y --no-install-recommends \
     libzip-dev \
     unzip \
-    && docker-php-ext-install pdo pdo_mysql zip \
+    && docker-php-ext-install pdo pdo_mysql \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 #Ajouter ServerName
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
