@@ -1,10 +1,10 @@
 <?php
 // Affiche les erreurs directement dans la page
-init_set('display_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 //Inclure l'autoloader
-require_once __DIR__ . '/vendor/autoload.php';
+require_once dirname(__DIR__).'/vendor/autoload.php';
 
 //import des classes
 use App\Config\Config;

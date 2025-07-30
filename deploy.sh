@@ -1,0 +1,1 @@
+docker compose down && docker image rm garagephp-app:latest && docker compose up -d
