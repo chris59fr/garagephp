@@ -24,4 +24,8 @@ CREATE TABLE cars (
     updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- Insérer un utilisateur admin par défaut (mot de passe: password)
+INSERT INTO `users` (`username`, `email`, `password`, `role`) VALUES
+('admin', 'admin@garage.com', '$2y$10$w5J1T8J1T4wE.pY2u8Y4a.cR/Ea6.aD/qW/jI/cW/hG.iJ/bK/lM.', 'admin');
+
 

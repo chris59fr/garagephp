@@ -21,7 +21,7 @@ services:
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: MonMotDePasse@2025
     volumes:
       - db_data:/var/lib/mysql
       - ./sql/garagephp.sql:/docker-entrypoint-initdb.d/init.sql
