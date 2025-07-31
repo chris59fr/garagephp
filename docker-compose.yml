@@ -13,6 +13,8 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - STORAGE_PATH=/var/www/html/storage
+    networks:
+      - custom
 
   db:
     image: mysql:8.0
@@ -25,6 +27,12 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./sql/garagephp.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - custom
 
 volumes:
   db_data:
+
+networks:
+  custom:
+    driver: bridge
