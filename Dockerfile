@@ -23,7 +23,6 @@ COPY ./docker/nginx/nginx.conf /etc/nginx/http.d/default.conf
 RUN sed -i 's|user = www-data|user = nginx|g' /usr/local/etc/php-fpm.d/www.conf && \
     sed -i 's|group = www-data|group = nginx|g' /usr/local/etc/php-fpm.d/www.conf
 
-
 ## Installation des dependances composer
 WORKDIR /var/www/html
 
