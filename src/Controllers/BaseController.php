@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 use App\Security\Validator;
 use App\Utils\Response;
@@ -32,6 +33,7 @@ abstract class BaseController{
 
         //On vérifie que le fichier vue existe bien
         if(!file_exists($viewPath)){
+
             $this->response->error("Vue non trouvée : $viewPath", 500);
             return; 
         }
@@ -40,7 +42,7 @@ abstract class BaseController{
         //Ex: $data = ['title' => 'Accueil'] devient $title = 'Accueil'
         extract($data);
 
-         // On utilise la mise en tampon de sortie (output buffering) pour capturer le HTML de la vue.
+        // On utilise la mise en tampon de sortie (output buffering) pour capturer le HTML de la vue.
         ob_start();
         include $viewPath;
 
