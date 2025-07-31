@@ -17,7 +17,7 @@ class HomeController extends BaseController{
         $carModel = new Car();
 
          // On rend la vue 'home/index' et on lui passe le titre et la liste des voitures.
-        $this->render('home/index',[
+        $this->render('index',[
             'title'=>'Accueil - Garage php',
             'cars'=> $carModel->all()
         ]);
